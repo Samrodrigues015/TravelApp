@@ -1,0 +1,32 @@
+[
+  {
+    "id": "8ba8c6c9-766b-4f37-b804-10037891db04",
+    "flightId": "9",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-10T11:51:31.591Z"
+  },
+  {
+    "id": "ef2e3c76-445d-46c6-904f-ee506053cff5",
+    "flightId": "4",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-11T09:23:57.567Z"
+  },
+  {
+    "id": "c2da063b-18cc-4240-8963-14606317c89e",
+    "flightId": "4",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-11T09:39:09.038Z"
+  },
+  {
+    "id": "440977be-9c36-4697-862f-0ca543453f27",
+    "flightId": "1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-11T09:53:34.403Z"
+  },
+  {
+    "id": "fcdd9f2f-84a0-4adc-844f-5a4cd158ecca",
+    "flightId": "8",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-11T09:58:10.387Z"
+  }
+]

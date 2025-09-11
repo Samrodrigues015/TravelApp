@@ -1,0 +1,70 @@
+[
+  {
+    "id": "1757492602232",
+    "hotelId": "hotel-1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-10T08:23:22.232Z",
+    "hotelDetails": {
+      "id": "hotel-1",
+      "hotel_name": "Hotel de luxo em Paris",
+      "description": "Um hotel de 5 estrelas com vista para a Torre Eiffel.",
+      "nightly_price": "350",
+      "currency": "USD",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://picsum.photos/id/1000/400/300"
+      ]
+    }
+  },
+  {
+    "id": "1757495795018",
+    "hotelId": "hotel-1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-10T09:16:35.018Z",
+    "hotelDetails": {
+      "id": "hotel-1",
+      "hotel_name": "Hotel de luxo em Paris",
+      "description": "Um hotel de 5 estrelas com vista para a Torre Eiffel.",
+      "nightly_price": "350",
+      "currency": "USD",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://picsum.photos/id/1000/400/300"
+      ]
+    }
+  },
+  {
+    "id": "1757497082988",
+    "hotelId": "hotel-1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-10T09:38:02.988Z",
+    "hotelDetails": {
+      "id": "hotel-1",
+      "hotel_name": "Hotel de luxo em Paris",
+      "description": "Um hotel de 5 estrelas com vista para a Torre Eiffel.",
+      "nightly_price": "350",
+      "currency": "USD",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://picsum.photos/id/1000/400/300"
+      ]
+    }
+  },
+  {
+    "id": "1757500339066",
+    "hotelId": "hotel-1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-10T10:32:19.066Z",
+    "hotelDetails": {
+      "id": "hotel-1",
+      "hotel_name": "Hotel de luxo em Paris",
+      "description": "Um hotel de 5 estrelas com vista para a Torre Eiffel.",
+      "nightly_price": "350",
+      "currency": "USD",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://picsum.photos/id/1000/400/300"
+      ]
+    }
+  }
+]
