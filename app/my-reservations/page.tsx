@@ -53,7 +53,7 @@ export default function MyReservations() {
         body: JSON.stringify({ reservationId: id }),
       });
 
-      const data = await res.json(); // agora sempre terá JSON
+      const data = await res.json(); 
 
       if (!res.ok) throw new Error(data.error || "Erro ao cancelar");
 
@@ -80,26 +80,130 @@ export default function MyReservations() {
             <p className="text-gray-600">Você ainda não possui reservas.</p>
           )}
 
-          <div className="space-y-4">
-            {reservations.map((res) => (
-              <div
-                key={res.id}
-                className="p-4 bg-white rounded-lg shadow flex justify-between items-center"
-              >
-                <div>
-                  <p className="font-medium">Reserva #{res.id}</p>
-                  <p className="text-sm text-gray-600">Voo: {res.flightId}</p>
-                </div>
-                <button
-                  onClick={() => handleCancel(res.id)}
-                  className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+          {/* Seção de Reservas de Voo */}
+          <div className="space-y-4 mb-8">
+            <h2 className="text-xl font-semibold text-blue-800">
+              ✈️ Reservas de Voos
+            </h2>
+            {reservations.filter((res) => res.flightId).length === 0 && (
+              <p className="text-gray-500">Nenhum voo reservado.</p>
+            )}
+            {reservations
+              .filter((res) => res.flightId)
+              .map((res) => (
+                <div
+                  key={res.id}
+                  className="p-4 bg-white rounded-lg shadow flex justify-between items-center"
                 >
-                  Cancelar
-                </button>
-              </div>
-            ))}
+                  <div>
+                    <p className="font-medium">Reserva #{res.id}</p>
+                    <p className="text-sm text-gray-600">Voo: {res.flightId}</p>
+                    <p className="text-xs text-gray-400">
+                      Data: {new Date(res.reservationDate).toLocaleString()}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleCancel(res.id)}
+                    className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              ))}
+          </div>
+
+          {/* Seção de Reservas de Hotéis */}
+          <div className="space-y-4">
+            <h2 className="text-xl font-semibold text-green-800">
+              🏨 Reservas de Hotéis
+            </h2>
+            {reservations.filter((res) => res.type === "hotel").length ===
+              0 && <p className="text-gray-500">Nenhum hotel reservado.</p>}
+            {reservations
+              .filter((res) => res.type === "hotel")
+              .map((res) => (
+                <div
+                  key={res.id}
+                  className="p-4 bg-white rounded-lg shadow flex justify-between items-center"
+                >
+                  <div>
+                    <p className="font-medium">Reserva #{res.id}</p>
+                    <p className="text-sm text-gray-700">
+                      Hotel: {res.hotelDetails?.hotel_name}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Preço: {res.hotelDetails?.currency}{" "}
+                      {res.hotelDetails?.nightly_price} / noite
+                    </p>
+                    {res.hotelDetails?.image_list?.[0] && (
+                      <img
+                        src={res.hotelDetails.image_list[0]}
+                        alt={res.hotelDetails.hotel_name}
+                        className="h-20 w-20 object-cover rounded mt-2"
+                      />
+                    )}
+                    <p className="text-xs text-gray-400">
+                      Data: {new Date(res.reservationDate).toLocaleString()}
+                    </p>
+                  </div>
+                  <button
+                    onClick={() => handleCancel(res.id)}
+                    className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                  >
+                    Cancelar
+                  </button>
+                </div>
+              ))}
           </div>
         </div>
+      </div>
+
+      {/* Seção de Reservas de Carros */}
+      <div className="max-w-3xl mx-auto px-4 mt-8 space-y-4">
+        <h2 className="text-xl font-semibold text-orange-700 text-start">
+          🚗 Reservas de Carros
+        </h2>
+
+        {reservations.filter((res) => res.type === "car").length === 0 && (
+          <p className="text-gray-500 text-center">Nenhum carro reservado.</p>
+        )}
+
+        {reservations
+          .filter((res) => res.type === "car")
+          .map((res) => (
+            <div
+              key={res.id}
+              className="p-4 bg-white rounded-lg shadow flex flex-col md:flex-row justify-between items-center"
+            >
+              <div className="flex flex-col md:flex-row items-center gap-4">
+                {res.carDetails?.image && (
+                  <img
+                    src={res.carDetails.image}
+                    alt={res.carDetails.name}
+                    className="h-20 w-28 object-cover rounded"
+                  />
+                )}
+                <div className="text-center md:text-left">
+                  <p className="font-medium">Reserva #{res.id}</p>
+                  <p className="text-sm text-gray-700">
+                    Carro: {res.carDetails?.name}
+                  </p>
+                  <p className="text-sm text-gray-600">
+                    Preço: {res.carDetails?.price} / dia
+                  </p>
+                  <p className="text-xs text-gray-400">
+                    Data: {new Date(res.reservationDate).toLocaleString()}
+                  </p>
+                </div>
+              </div>
+              <button
+                onClick={() => handleCancel(res.id)}
+                className="mt-2 md:mt-0 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+              >
+                Cancelar
+              </button>
+            </div>
+          ))}
       </div>
     </>
   );

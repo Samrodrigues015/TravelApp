@@ -1,23 +1,5 @@
 [
   {
-    "id": "8ba8c6c9-766b-4f37-b804-10037891db04",
-    "flightId": "9",
-    "userEmail": "samararodrigues2000@icloud.com",
-    "createdAt": "2025-09-10T11:51:31.591Z"
-  },
-  {
-    "id": "ef2e3c76-445d-46c6-904f-ee506053cff5",
-    "flightId": "4",
-    "userEmail": "samararodrigues2000@icloud.com",
-    "createdAt": "2025-09-11T09:23:57.567Z"
-  },
-  {
-    "id": "c2da063b-18cc-4240-8963-14606317c89e",
-    "flightId": "4",
-    "userEmail": "samararodrigues2000@icloud.com",
-    "createdAt": "2025-09-11T09:39:09.038Z"
-  },
-  {
     "id": "440977be-9c36-4697-862f-0ca543453f27",
     "flightId": "1",
     "userEmail": "samararodrigues2000@icloud.com",
@@ -28,5 +10,71 @@
     "flightId": "8",
     "userEmail": "samararodrigues2000@icloud.com",
     "createdAt": "2025-09-11T09:58:10.387Z"
+  },
+  {
+    "id": "f683d054-4df9-4b34-9b24-3ee54a4a8ce7",
+    "flightId": "10",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-15T07:23:42.527Z"
+  },
+  {
+    "id": "1757922169347",
+    "type": "hotel",
+    "hotelId": "hotel-2",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-15T07:42:49.347Z",
+    "hotelDetails": {
+      "id": "hotel-2",
+      "hotel_name": "Hotel boutique charmoso",
+      "description": "Pequeno e aconchegante, no coração da cidade.",
+      "nightly_price": "150",
+      "currency": "USD",
+      "review_rating_float": 4.5,
+      "image_list": [
+        "https://picsum.photos/id/1005/400/300"
+      ]
+    }
+  },
+  {
+    "id": "1757922379977",
+    "type": "hotel",
+    "hotelId": "hotel-1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-15T07:46:19.977Z",
+    "hotelDetails": {
+      "id": "hotel-1",
+      "hotel_name": "Hotel de luxo em Paris",
+      "description": "Um hotel de 5 estrelas com vista para a Torre Eiffel.",
+      "nightly_price": "350",
+      "currency": "USD",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://picsum.photos/id/1000/400/300"
+      ]
+    }
+  },
+  {
+    "id": "1757923281873",
+    "type": "car",
+    "carId": "car1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-15T08:01:21.873Z",
+    "carDetails": {
+      "name": "Fiat 500",
+      "price": 45,
+      "image": "https://cdn.motor1.com/images/mgl/PxXjv/s1/fiat-500-electric.webp"
+    }
+  },
+  {
+    "id": "1757923604787",
+    "type": "car",
+    "carId": "car2",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-15T08:06:44.787Z",
+    "carDetails": {
+      "name": "BMW X5",
+      "price": 120,
+      "image": "https://cdn.motor1.com/images/mgl/Yxx7E/s3/2024-bmw-x5-m60i.jpg"
+    }
   }
 ]

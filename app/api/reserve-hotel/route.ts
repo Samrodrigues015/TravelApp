@@ -1,8 +1,9 @@
+// app/api/reserve-hotel/route.ts
 import { NextRequest, NextResponse } from "next/server";
 import fs from "fs";
 import path from "path";
 
-const RESERVATIONS_FILE = path.join(process.cwd(), "app/data/hotel-reservations.json");
+const RESERVATIONS_FILE = path.join(process.cwd(), "reservations.json");
 
 export async function POST(req: NextRequest) {
   try {
@@ -18,7 +19,8 @@ export async function POST(req: NextRequest) {
       : [];
 
     const newReservation = {
-      id: Date.now().toString(), // ID único para a reserva
+      id: Date.now().toString(), // ID único
+      type: "hotel",             // <-- marcamos como hotel
       hotelId,
       userEmail,
       reservationDate: new Date().toISOString(),
@@ -27,7 +29,6 @@ export async function POST(req: NextRequest) {
 
     reservations.push(newReservation);
 
-    // Salva a nova lista de reservas
     fs.writeFileSync(RESERVATIONS_FILE, JSON.stringify(reservations, null, 2));
 
     return NextResponse.json({ message: "Reserva de hotel confirmada com sucesso!" });

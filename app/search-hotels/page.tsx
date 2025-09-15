@@ -105,9 +105,16 @@ export default function SearchHotelsPage() {
       alert("Você precisa estar logado para fazer uma reserva.");
       return;
     }
-    
-    if (cardNumber.replace(/\s/g, "").length !== 16 || expiryDate.length !== 5 || cvv.length < 3 || cardName.trim() === "") {
-        return alert("Por favor, preencha todos os campos do cartão corretamente.");
+
+    if (
+      cardNumber.replace(/\s/g, "").length !== 16 ||
+      expiryDate.length !== 5 ||
+      cvv.length < 3 ||
+      cardName.trim() === ""
+    ) {
+      return alert(
+        "Por favor, preencha todos os campos do cartão corretamente."
+      );
     }
 
     try {
@@ -127,12 +134,29 @@ export default function SearchHotelsPage() {
         throw new Error(data.error || "Erro ao reservar o hotel.");
       }
 
+      // ✅ Salva a reserva no localStorage
+      const existingReservations = JSON.parse(
+        localStorage.getItem("reservations") || "[]"
+      );
+      const newReservation = {
+        ...selectedHotel,
+        checkInDate: formData.checkInDate,
+        checkOutDate: formData.checkOutDate,
+        reservedAt: new Date().toISOString(),
+      };
+
+      localStorage.setItem(
+        "reservations",
+        JSON.stringify([...existingReservations, newReservation])
+      );
+
       setShowPayment(false);
       setSelectedHotel(null);
       setShowConfirmation(true);
-
     } catch (err) {
-      alert(err instanceof Error ? err.message : "Erro desconhecido ao reservar.");
+      alert(
+        err instanceof Error ? err.message : "Erro desconhecido ao reservar."
+      );
     }
   };
 
@@ -250,7 +274,7 @@ export default function SearchHotelsPage() {
                           / noite
                         </span>
                       </div>
-                      <button 
+                      <button
                         onClick={() => {
                           setSelectedHotel(hotel);
                           setShowPayment(true);
@@ -275,7 +299,8 @@ export default function SearchHotelsPage() {
               Dados do Cartão de Crédito
             </h3>
             <p className="mb-4 text-sm text-gray-600">
-              Total a pagar: {selectedHotel.currency} {selectedHotel.nightly_price} / noite
+              Total a pagar: {selectedHotel.currency}{" "}
+              {selectedHotel.nightly_price} / noite
             </p>
             <form className="space-y-4">
               <div>
@@ -384,10 +409,12 @@ export default function SearchHotelsPage() {
             <button
               className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
               onClick={() => {
+                // Navega para a página de reservas e fecha o modal
+                window.location.href = "/my-reservations";
                 setShowConfirmation(false);
               }}
             >
-              Fechar
+              Ver Reserva
             </button>
           </div>
         </div>

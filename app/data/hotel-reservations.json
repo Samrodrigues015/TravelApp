@@ -66,5 +66,56 @@
         "https://picsum.photos/id/1000/400/300"
       ]
     }
+  },
+  {
+    "id": "1757586059048",
+    "hotelId": "hotel-1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-11T10:20:59.048Z",
+    "hotelDetails": {
+      "id": "hotel-1",
+      "hotel_name": "Hotel de luxo em Paris",
+      "description": "Um hotel de 5 estrelas com vista para a Torre Eiffel.",
+      "nightly_price": "350",
+      "currency": "USD",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://picsum.photos/id/1000/400/300"
+      ]
+    }
+  },
+  {
+    "id": "1757921070011",
+    "hotelId": "hotel-3",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-15T07:24:30.011Z",
+    "hotelDetails": {
+      "id": "hotel-3",
+      "hotel_name": "Hostel econômico",
+      "description": "Opção barata para mochileiros, perto de transportes públicos.",
+      "nightly_price": "45",
+      "currency": "USD",
+      "review_rating_float": 3.9,
+      "image_list": [
+        "https://picsum.photos/id/1010/400/300"
+      ]
+    }
+  },
+  {
+    "id": "1757921453627",
+    "hotelId": "hotel-1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-15T07:30:53.627Z",
+    "hotelDetails": {
+      "id": "hotel-1",
+      "hotel_name": "Hotel de luxo em Paris",
+      "description": "Um hotel de 5 estrelas com vista para a Torre Eiffel.",
+      "nightly_price": "350",
+      "currency": "USD",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://picsum.photos/id/1000/400/300"
+      ]
+    }
   }
 ]
