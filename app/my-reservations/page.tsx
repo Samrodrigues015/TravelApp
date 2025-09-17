@@ -7,6 +7,16 @@ interface Reservation {
   id: string;
   flightId: string;
   userEmail: string;
+  createdAt?: string;
+  flightDetails?: {
+    origin: string;
+    destination: string;
+    departureTime: string;
+    arrivalTime: string;
+    airline: string;
+    flightNumber: string;
+  };
+  // ... outros campos se necessário
 }
 
 export default function MyReservations() {
@@ -82,8 +92,8 @@ export default function MyReservations() {
 
           {/* Seção de Reservas de Voo */}
           <div className="space-y-4 mb-8">
-            <h2 className="text-xl font-semibold text-blue-800">
-              ✈️ Reservas de Voos
+            <h2 className="text-xl font-semibold text-[#503459]">
+              Reservas de Voos
             </h2>
             {reservations.filter((res) => res.flightId).length === 0 && (
               <p className="text-gray-500">Nenhum voo reservado.</p>
@@ -96,15 +106,43 @@ export default function MyReservations() {
                   className="p-4 bg-white rounded-lg shadow flex justify-between items-center"
                 >
                   <div>
-                    <p className="font-medium">Reserva #{res.id}</p>
-                    <p className="text-sm text-gray-600">Voo: {res.flightId}</p>
+                    <p className="font-medium">
+                      {res.flightDetails
+                        ? `Voo ${res.flightDetails.flightNumber} - ${res.flightDetails.airline}`
+                        : `Reserva de Voo`}
+                    </p>
+                    {res.flightDetails && (
+                      <>
+                        <p className="text-sm text-gray-600">
+                          <strong>Origem:</strong> {res.flightDetails.origin}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          <strong>Destino:</strong> {res.flightDetails.destination}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          <strong>Companhia:</strong> {res.flightDetails.airline}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          <strong>Número do Voo:</strong> {res.flightDetails.flightNumber}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          <strong>Partida:</strong> {new Date(res.flightDetails.departureTime).toLocaleString()}
+                        </p>
+                        <p className="text-sm text-gray-600">
+                          <strong>Chegada:</strong> {new Date(res.flightDetails.arrivalTime).toLocaleString()}
+                        </p>
+                      </>
+                    )}
                     <p className="text-xs text-gray-400">
-                      Data: {new Date(res.reservationDate).toLocaleString()}
+                      Reservado em:{" "}
+                      {new Date(
+                        res.createdAt || res.reservationDate
+                      ).toLocaleString()}
                     </p>
                   </div>
                   <button
                     onClick={() => handleCancel(res.id)}
-                    className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                    className="px-4 py-2 bg-[#6a4f72] text-white rounded hover:bg-[#6a4f72]"
                   >
                     Cancelar
                   </button>
@@ -114,8 +152,8 @@ export default function MyReservations() {
 
           {/* Seção de Reservas de Hotéis */}
           <div className="space-y-4">
-            <h2 className="text-xl font-semibold text-green-800">
-              🏨 Reservas de Hotéis
+            <h2 className="text-xl font-semibold text-[#503459]">
+              Reservas de Hotéis
             </h2>
             {reservations.filter((res) => res.type === "hotel").length ===
               0 && <p className="text-gray-500">Nenhum hotel reservado.</p>}
@@ -148,7 +186,7 @@ export default function MyReservations() {
                   </div>
                   <button
                     onClick={() => handleCancel(res.id)}
-                    className="px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                    className="px-4 py-2 bg-[#6a4f72] text-white rounded hover:bg-[#6a4f72]"
                   >
                     Cancelar
                   </button>
@@ -160,8 +198,8 @@ export default function MyReservations() {
 
       {/* Seção de Reservas de Carros */}
       <div className="max-w-3xl mx-auto px-4 mt-8 space-y-4">
-        <h2 className="text-xl font-semibold text-orange-700 text-start">
-          🚗 Reservas de Carros
+        <h2 className="text-xl font-semibold text-[#503459] text-start">
+          Reservas de Carros
         </h2>
 
         {reservations.filter((res) => res.type === "car").length === 0 && (
@@ -176,12 +214,16 @@ export default function MyReservations() {
               className="p-4 bg-white rounded-lg shadow flex flex-col md:flex-row justify-between items-center"
             >
               <div className="flex flex-col md:flex-row items-center gap-4">
-                {res.carDetails?.image && (
+                {res.carDetails?.image ? (
                   <img
                     src={res.carDetails.image}
                     alt={res.carDetails.name}
                     className="h-20 w-28 object-cover rounded"
                   />
+                ) : (
+                  <div className="h-20 w-28 flex items-center justify-center bg-gray-200 rounded text-gray-500">
+                    Sem imagem
+                  </div>
                 )}
                 <div className="text-center md:text-left">
                   <p className="font-medium">Reserva #{res.id}</p>
@@ -198,7 +240,7 @@ export default function MyReservations() {
               </div>
               <button
                 onClick={() => handleCancel(res.id)}
-                className="mt-2 md:mt-0 px-4 py-2 bg-red-600 text-white rounded hover:bg-red-700"
+                className="mt-2 md:mt-0 px-4 py-2 bg-[#6a4f72] text-white rounded hover:bg-[#6a4f72]"
               >
                 Cancelar
               </button>

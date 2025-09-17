@@ -9,13 +9,14 @@ interface Reservation {
   flightId: string;
   userEmail: string;
   createdAt: string;
+  flightDetails: string; // <-- novo campo
 }
 
 const RESERVATIONS_FILE = path.join(process.cwd(), "reservations.json");
 
 export async function POST(req: NextRequest) {
   try {
-    const { flightId, userEmail } = await req.json();
+    const { flightId, userEmail, flightDetails } = await req.json();
 
     if (!flightId || !userEmail) {
       return NextResponse.json({ error: "flightId e userEmail são obrigatórios" }, { status: 400 });
@@ -34,6 +35,7 @@ export async function POST(req: NextRequest) {
       flightId,
       userEmail,
       createdAt: new Date().toISOString(),
+      flightDetails, // <-- novo campo
     };
     reservations.push(newReservation);
 

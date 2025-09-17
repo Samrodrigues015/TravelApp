@@ -16,6 +16,8 @@ interface FlightOffer {
         iataCode: string;
         at: string;
       };
+      carrierCode?: string; // <--- adicione
+      number?: string;      // <--- adicione
     }>;
   }>;
   price: {
@@ -31,6 +33,18 @@ interface SearchFormData {
   returnDate?: string;
   adults: number;
 }
+
+const airlineNames: Record<string, string> = {
+  JJ: "LATAM Airlines",
+  G3: "GOL Linhas Aéreas",
+  AD: "Azul Linhas Aéreas",
+  AA: "American Airlines",
+  UA: "United Airlines",
+  DL: "Delta Air Lines",
+  AF: "Air France",
+  LH: "Lufthansa",
+  // ...adicione outros conforme necessário
+};
 
 export default function Home() {
   const [formData, setFormData] = useState<SearchFormData>({
@@ -245,7 +259,7 @@ export default function Home() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#81638b] text-white py-2 px-4 rounded-md hover:bg-[#6a4f72] focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? "Buscando..." : "Buscar Voos"}
               </button>
@@ -269,40 +283,44 @@ export default function Home() {
                     className="border border-gray-200 rounded-lg p-4 hover:shadow-md transition-shadow cursor-pointer"
                     onClick={() => setSelectedFlight(flight)}
                   >
-                    <div className="flex justify-between items-center">
-                      <div className="flex-1">
-                        <div className="text-lg font-medium text-gray-800">
-                          {
-                            flight.itineraries[0]?.segments[0]?.departure
-                              .iataCode
-                          }{" "}
-                          →{" "}
-                          {
-                            flight.itineraries[0]?.segments[
-                              flight.itineraries[0].segments.length - 1
-                            ]?.arrival.iataCode
-                          }
+                    <div className="flex flex-col gap-2">
+                      {(() => {
+                        const segments = flight.itineraries[0]?.segments;
+                        const firstSegment = segments[0];
+                        const lastSegment = segments[segments.length - 1];
+                        return (
+                          <div className="border-b pb-2 mb-2">
+                            <div>
+                              <strong>Origem:</strong> {firstSegment.departure.iataCode}{" "}
+                              <span className="text-xs text-gray-500">
+                                ({new Date(firstSegment.departure.at).toLocaleString("pt-BR")})
+                              </span>
+                            </div>
+                            <div>
+                              <strong>Destino:</strong> {lastSegment.arrival.iataCode}{" "}
+                              <span className="text-xs text-gray-500">
+                                ({new Date(lastSegment.arrival.at).toLocaleString("pt-BR")})
+                              </span>
+                            </div>
+                            <div>
+                              <strong>Companhia:</strong>{" "}
+                              {airlineNames[firstSegment.carrierCode || ""] ||
+                                firstSegment.carrierCode ||
+                                "N/A"}
+                              {firstSegment.number && (
+                                <> <strong>Voo:</strong> {firstSegment.number}</>
+                              )}
+                            </div>
+                          </div>
+                        );
+                      })()}
+                      <div className="flex justify-between items-center">
+                        <div>
+                          <strong>Total:</strong>{" "}
+                          <span className="text-[#503459] font-bold">
+                            {flight.price.currency} {flight.price.total}
+                          </span>
                         </div>
-                        <div className="text-sm text-gray-600 mt-1">
-                          Partida:{" "}
-                          {new Date(
-                            flight.itineraries[0]?.segments[0]?.departure.at
-                          ).toLocaleString("pt-BR")}
-                        </div>
-                        <div className="text-sm text-gray-600">
-                          Chegada:{" "}
-                          {new Date(
-                            flight.itineraries[0]?.segments[
-                              flight.itineraries[0].segments.length - 1
-                            ]?.arrival.at
-                          ).toLocaleString("pt-BR")}
-                        </div>
-                      </div>
-                      <div className="text-right">
-                        <div className="text-2xl font-bold text-green-600">
-                          {flight.price.currency} {flight.price.total}
-                        </div>
-                        <div className="text-sm text-gray-500">Total</div>
                       </div>
                     </div>
                   </div>
@@ -339,11 +357,11 @@ export default function Home() {
                   ]?.arrival.at
                 ).toLocaleString("pt-BR")}
               </p>
-              <p className="font-bold text-green-600">
+              <p className="font-bold text-[#503459]">
                 {selectedFlight.price.currency} {selectedFlight.price.total}
               </p>
               <button
-                className="mt-4 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                className="mt-4 bg-[#81638b] text-white px-4 py-2 rounded hover:bg-[#6a4f72]"
                 onClick={() => setShowPayment(true)}
               >
                 Reservar Voo
@@ -351,7 +369,8 @@ export default function Home() {
 
               {reservationSuccess && (
                 <p className="text-green-600 mt-2">{reservationSuccess}</p>
-              )}
+              )
+              }
             </div>
           )}
           {/* Modal de pagamento */}
@@ -449,7 +468,7 @@ export default function Home() {
                     Cancelar
                   </button>
                   <button
-                    className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                    className="px-4 py-2 bg-[#81638b] text-white rounded hover:bg-[#6a4f72]"
                     onClick={async () => {
                       if (
                         cardNumber.replace(/\s/g, "").length !== 16 ||
@@ -468,6 +487,30 @@ export default function Home() {
                           body: JSON.stringify({
                             flightId: selectedFlight.id,
                             userEmail: localStorage.getItem("userEmail"),
+                            flightDetails: {
+                              origin:
+                                selectedFlight.itineraries[0]?.segments[0]
+                                  ?.departure.iataCode,
+                              destination:
+                                selectedFlight.itineraries[0]?.segments[
+                                  selectedFlight.itineraries[0].segments.length - 1
+                                ]?.arrival.iataCode,
+                              departureTime:
+                                selectedFlight.itineraries[0]?.segments[0]
+                                  ?.departure.at,
+                              arrivalTime:
+                                selectedFlight.itineraries[0]?.segments[
+                                  selectedFlight.itineraries[0].segments.length - 1
+                                ]?.arrival.at,
+                              airline:
+                                airlineNames[
+                                  selectedFlight.itineraries[0]?.segments[0]
+                                    ?.carrierCode
+                                ] || selectedFlight.itineraries[0]?.segments[0]
+                                    ?.carrierCode,
+                              flightNumber:
+                                selectedFlight.itineraries[0]?.segments[0]?.number,
+                            },
                           }),
                         });
                         const data = await res.json();
@@ -495,12 +538,12 @@ export default function Home() {
           {isClient && showConfirmation && (
             <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
               <div className="bg-white rounded-lg p-6 w-96 shadow-lg text-center">
-                <h3 className="text-xl font-semibold text-green-600 mb-4">
+                <h3 className="text-xl font-semibold text-[#503459] mb-4">
                   Reserva Confirmada!
                 </h3>
                 <p className="mb-6">Seu voo foi reservado com sucesso.</p>
                 <button
-                  className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                  className="px-6 py-2 bg-[#81638b] text-white rounded hover:bg-[#6a4f72]"
                   onClick={() => {
                     // Navega para a página de reservas e fecha o modal
                     window.location.href = "/my-reservations";

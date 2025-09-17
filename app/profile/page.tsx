@@ -135,13 +135,13 @@ export default function ProfilePage() {
                 <div className="flex gap-2 mt-4">
                   <button
                     onClick={() => setIsEditing(true)}
-                    className="bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                    className="bg-[#81638b] text-white px-4 py-2 rounded hover:bg-[#6a4f72]"
                   >
                     Editar Perfil
                   </button>
                   <button
                     onClick={handleLogout}
-                    className="bg-red-600 text-white px-4 py-2 rounded hover:bg-red-700"
+                    className="bg-[#81638b] text-white px-4 py-2 rounded hover:bg-[#6a4f72]"
                   >
                     Logout
                   </button>

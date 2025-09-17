@@ -1,23 +1,5 @@
 [
   {
-    "id": "440977be-9c36-4697-862f-0ca543453f27",
-    "flightId": "1",
-    "userEmail": "samararodrigues2000@icloud.com",
-    "createdAt": "2025-09-11T09:53:34.403Z"
-  },
-  {
-    "id": "fcdd9f2f-84a0-4adc-844f-5a4cd158ecca",
-    "flightId": "8",
-    "userEmail": "samararodrigues2000@icloud.com",
-    "createdAt": "2025-09-11T09:58:10.387Z"
-  },
-  {
-    "id": "f683d054-4df9-4b34-9b24-3ee54a4a8ce7",
-    "flightId": "10",
-    "userEmail": "samararodrigues2000@icloud.com",
-    "createdAt": "2025-09-15T07:23:42.527Z"
-  },
-  {
     "id": "1757922169347",
     "type": "hotel",
     "hotelId": "hotel-2",
@@ -54,27 +36,73 @@
     }
   },
   {
-    "id": "1757923281873",
-    "type": "car",
-    "carId": "car1",
+    "id": "1757935915139",
+    "type": "hotel",
+    "hotelId": "hotel-1",
     "userEmail": "samararodrigues2000@icloud.com",
-    "reservationDate": "2025-09-15T08:01:21.873Z",
-    "carDetails": {
-      "name": "Fiat 500",
-      "price": 45,
-      "image": "https://cdn.motor1.com/images/mgl/PxXjv/s1/fiat-500-electric.webp"
+    "reservationDate": "2025-09-15T11:31:55.139Z",
+    "hotelDetails": {
+      "id": "hotel-1",
+      "hotel_name": "Hotel de luxo em Paris",
+      "description": "Um hotel de 5 estrelas com vista para a Torre Eiffel.",
+      "nightly_price": "350",
+      "currency": "USD",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://picsum.photos/id/1000/400/300"
+      ]
     }
   },
   {
-    "id": "1757923604787",
+    "id": "1757936035883",
     "type": "car",
     "carId": "car2",
     "userEmail": "samararodrigues2000@icloud.com",
-    "reservationDate": "2025-09-15T08:06:44.787Z",
+    "reservationDate": "2025-09-15T11:33:55.883Z",
     "carDetails": {
       "name": "BMW X5",
       "price": 120,
-      "image": "https://cdn.motor1.com/images/mgl/Yxx7E/s3/2024-bmw-x5-m60i.jpg"
+      "image": "https://tse2.mm.bing.net/th/id/OIP.CAz3G-PdA_E3IfUs3PxdFgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+    }
+  },
+  {
+    "id": "e70c024c-951a-4599-92db-57f3cb9fbfac",
+    "flightId": "7",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-16T16:35:18.411Z",
+    "flightDetails": {
+      "origin": "GRU",
+      "destination": "JFK",
+      "departureTime": "2025-09-17T21:40:00",
+      "arrivalTime": "2025-09-18T15:08:00",
+      "airline": "AC",
+      "flightNumber": "91"
+    }
+  },
+  {
+    "id": "441ae853-0bf5-4b8f-8b1e-efae43af10ec",
+    "flightId": "8",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-17T07:35:41.368Z",
+    "flightDetails": {
+      "origin": "GRU",
+      "destination": "OPO",
+      "departureTime": "2025-09-17T21:45:00",
+      "arrivalTime": "2025-09-19T10:40:00",
+      "airline": "GOL Linhas Aéreas",
+      "flightNumber": "5500"
+    }
+  },
+  {
+    "id": "1758095392861",
+    "type": "car",
+    "carId": "car1",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-17T07:49:52.861Z",
+    "carDetails": {
+      "name": "Fiat 500",
+      "price": 45,
+      "image": "https://car-images.bauersecure.com/wp-images/12903/fiat500_100.jpg"
     }
   }
 ]

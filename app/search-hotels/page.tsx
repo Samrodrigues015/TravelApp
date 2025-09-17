@@ -228,7 +228,7 @@ export default function SearchHotelsPage() {
               <button
                 type="submit"
                 disabled={loading}
-                className="w-full bg-blue-600 text-white py-2 px-4 rounded-md hover:bg-blue-700 focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
+                className="w-full bg-[#6a4f72] text-white py-2 px-4 rounded-md hover:bg-[#6a4f72] focus:outline-none focus:ring-2 focus:ring-blue-500 disabled:opacity-50 disabled:cursor-not-allowed"
               >
                 {loading ? "Buscando..." : "Buscar Hotéis"}
               </button>
@@ -265,10 +265,10 @@ export default function SearchHotelsPage() {
                       <p className="text-gray-600 text-sm">
                         {hotel.description}
                       </p>
-                      <div className="mt-2 text-yellow-500">
+                      <div className="mt-2 text-[#81638b]">
                         Avaliação: {hotel.review_rating_float} / 5
                       </div>
-                      <div className="mt-4 text-2xl font-bold text-green-600">
+                      <div className="mt-4 text-2xl font-bold text-[#503459]">
                         {hotel.currency} {hotel.nightly_price}{" "}
                         <span className="text-sm font-normal text-gray-500">
                           / noite
@@ -279,7 +279,7 @@ export default function SearchHotelsPage() {
                           setSelectedHotel(hotel);
                           setShowPayment(true);
                         }}
-                        className="mt-2 bg-green-600 text-white px-4 py-2 rounded hover:bg-green-700"
+                        className="mt-2 bg-[#81638b] text-white px-4 py-2 rounded hover:[#81638b]"
                       >
                         Reservar Hotel
                       </button>
@@ -389,7 +389,7 @@ export default function SearchHotelsPage() {
                 Cancelar
               </button>
               <button
-                className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                className="px-4 py-2 bg-[#81638b] text-white rounded hover:bg-[#81638b]"
                 onClick={handleReserveHotel}
               >
                 Confirmar Pagamento
@@ -402,12 +402,12 @@ export default function SearchHotelsPage() {
       {isClient && showConfirmation && (
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
           <div className="bg-white rounded-lg p-6 w-96 shadow-lg text-center">
-            <h3 className="text-xl font-semibold text-green-600 mb-4">
+            <h3 className="text-xl font-semibold text-[#503459] mb-4">
               Reserva Confirmada!
             </h3>
             <p className="mb-6">Seu hotel foi reservado com sucesso.</p>
             <button
-              className="px-6 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+              className="px-6 py-2 bg-[#81638b] text-white rounded hover:bg-[#81638b]"
               onClick={() => {
                 // Navega para a página de reservas e fecha o modal
                 window.location.href = "/my-reservations";
