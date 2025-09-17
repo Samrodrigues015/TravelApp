@@ -17,7 +17,7 @@ interface FlightOffer {
         at: string;
       };
       carrierCode?: string; // <--- adicione
-      number?: string;      // <--- adicione
+      number?: string; // <--- adicione
     }>;
   }>;
   price: {
@@ -291,15 +291,25 @@ export default function Home() {
                         return (
                           <div className="border-b pb-2 mb-2">
                             <div>
-                              <strong>Origem:</strong> {firstSegment.departure.iataCode}{" "}
+                              <strong>Origem:</strong>{" "}
+                              {firstSegment.departure.iataCode}{" "}
                               <span className="text-xs text-gray-500">
-                                ({new Date(firstSegment.departure.at).toLocaleString("pt-BR")})
+                                (
+                                {new Date(
+                                  firstSegment.departure.at
+                                ).toLocaleString("pt-BR")}
+                                )
                               </span>
                             </div>
                             <div>
-                              <strong>Destino:</strong> {lastSegment.arrival.iataCode}{" "}
+                              <strong>Destino:</strong>{" "}
+                              {lastSegment.arrival.iataCode}{" "}
                               <span className="text-xs text-gray-500">
-                                ({new Date(lastSegment.arrival.at).toLocaleString("pt-BR")})
+                                (
+                                {new Date(
+                                  lastSegment.arrival.at
+                                ).toLocaleString("pt-BR")}
+                                )
                               </span>
                             </div>
                             <div>
@@ -308,7 +318,10 @@ export default function Home() {
                                 firstSegment.carrierCode ||
                                 "N/A"}
                               {firstSegment.number && (
-                                <> <strong>Voo:</strong> {firstSegment.number}</>
+                                <>
+                                  {" "}
+                                  <strong>Voo:</strong> {firstSegment.number}
+                                </>
                               )}
                             </div>
                           </div>
@@ -369,8 +382,7 @@ export default function Home() {
 
               {reservationSuccess && (
                 <p className="text-green-600 mt-2">{reservationSuccess}</p>
-              )
-              }
+              )}
             </div>
           )}
           {/* Modal de pagamento */}
@@ -493,23 +505,27 @@ export default function Home() {
                                   ?.departure.iataCode,
                               destination:
                                 selectedFlight.itineraries[0]?.segments[
-                                  selectedFlight.itineraries[0].segments.length - 1
+                                  selectedFlight.itineraries[0].segments
+                                    .length - 1
                                 ]?.arrival.iataCode,
                               departureTime:
                                 selectedFlight.itineraries[0]?.segments[0]
                                   ?.departure.at,
                               arrivalTime:
                                 selectedFlight.itineraries[0]?.segments[
-                                  selectedFlight.itineraries[0].segments.length - 1
+                                  selectedFlight.itineraries[0].segments
+                                    .length - 1
                                 ]?.arrival.at,
                               airline:
                                 airlineNames[
                                   selectedFlight.itineraries[0]?.segments[0]
                                     ?.carrierCode
-                                ] || selectedFlight.itineraries[0]?.segments[0]
-                                    ?.carrierCode,
+                                ] ||
+                                selectedFlight.itineraries[0]?.segments[0]
+                                  ?.carrierCode,
                               flightNumber:
-                                selectedFlight.itineraries[0]?.segments[0]?.number,
+                                selectedFlight.itineraries[0]?.segments[0]
+                                  ?.number,
                             },
                           }),
                         });

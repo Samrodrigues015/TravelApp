@@ -44,7 +44,8 @@ export default function CarsPage() {
         id: "car1",
         name: "Fiat 500",
         price: 45,
-        image: "https://car-images.bauersecure.com/wp-images/12903/fiat500_100.jpg",
+        image:
+          "https://car-images.bauersecure.com/wp-images/12903/fiat500_100.jpg",
         description: "Compacto, econômico e perfeito para a cidade.",
         location: "São Paulo",
         model: "Hatch",
@@ -53,7 +54,8 @@ export default function CarsPage() {
         id: "car2",
         name: "BMW X5",
         price: 120,
-        image: "https://tse2.mm.bing.net/th/id/OIP.CAz3G-PdA_E3IfUs3PxdFgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
+        image:
+          "https://tse2.mm.bing.net/th/id/OIP.CAz3G-PdA_E3IfUs3PxdFgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3",
         description: "SUV de luxo para viagens confortáveis.",
         location: "Rio de Janeiro",
         model: "SUV",
@@ -62,7 +64,8 @@ export default function CarsPage() {
         id: "car3",
         name: "Tesla Model 3",
         price: 150,
-        image: "https://th.bing.com/th/id/R.92fcbac9c884704e9b46cfe684cd0750?rik=enmnAfZpY5q3pg&pid=ImgRaw&r=0",
+        image:
+          "https://th.bing.com/th/id/R.92fcbac9c884704e9b46cfe684cd0750?rik=enmnAfZpY5q3pg&pid=ImgRaw&r=0",
         description: "100% elétrico, tecnologia de ponta e autonomia incrível.",
         location: "São Paulo",
         model: "Sedan",
@@ -71,7 +74,8 @@ export default function CarsPage() {
         id: "car4",
         name: "Volkswagen T-Cross",
         price: 80,
-        image: "https://www.targetmotori.com/wp-content/uploads/2022/08/volkswagen-t-cross-1-5-tsi-dsg-770x433.jpg",
+        image:
+          "https://www.targetmotori.com/wp-content/uploads/2022/08/volkswagen-t-cross-1-5-tsi-dsg-770x433.jpg",
         description: "SUV compacto, ótimo para família.",
         location: "Curitiba",
         model: "SUV",
@@ -80,7 +84,8 @@ export default function CarsPage() {
         id: "car5",
         name: "Chevrolet Onix",
         price: 55,
-        image: "https://1.bp.blogspot.com/-Ux5i-d7TbDI/XXxV1Ej24eI/AAAAAAAAW8k/0nwB6sUkDIsfCtJ8RtA6cUduYYH_R6YXgCLcBGAsYHQ/s640/Novo%2BOnix%2BPremier%2B%25281%2529.jpg",
+        image:
+          "https://1.bp.blogspot.com/-Ux5i-d7TbDI/XXxV1Ej24eI/AAAAAAAAW8k/0nwB6sUkDIsfCtJ8RtA6cUduYYH_R6YXgCLcBGAsYHQ/s640/Novo%2BOnix%2BPremier%2B%25281%2529.jpg",
         description: "Econômico, confortável e moderno.",
         location: "Belo Horizonte",
         model: "Hatch",
@@ -89,7 +94,8 @@ export default function CarsPage() {
         id: "car6",
         name: "Renault Kwid",
         price: 40,
-        image: "https://mlqt0se4pk9p.i.optimole.com/q:85/https://www.autodata.com.br/wordpress/wp-content/uploads//2023/10/renault-kwid.jpg",
+        image:
+          "https://mlqt0se4pk9p.i.optimole.com/q:85/https://www.autodata.com.br/wordpress/wp-content/uploads//2023/10/renault-kwid.jpg",
         description: "Compacto, ideal para o dia a dia.",
         location: "Recife",
         model: "Hatch",
@@ -98,7 +104,8 @@ export default function CarsPage() {
         id: "car7",
         name: "Toyota Corolla",
         price: 90,
-        image: "https://images.prismic.io/carwow/c011a8a8-d805-4b88-b6c6-d40fbffbb6f0_2023+RHD+Toyota+Corolla+Front+3Q+Driving+01.jpg",
+        image:
+          "https://images.prismic.io/carwow/c011a8a8-d805-4b88-b6c6-d40fbffbb6f0_2023+RHD+Toyota+Corolla+Front+3Q+Driving+01.jpg",
         description: "Sedan confortável e seguro.",
         location: "São Paulo",
         model: "Sedan",
@@ -107,7 +114,8 @@ export default function CarsPage() {
         id: "car8",
         name: "Jeep Compass",
         price: 110,
-        image: "https://tse1.mm.bing.net/th/id/OIP.fqkDdIjU0cLcLvOCSMmcdAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3",
+        image:
+          "https://tse1.mm.bing.net/th/id/OIP.fqkDdIjU0cLcLvOCSMmcdAHaFj?rs=1&pid=ImgDetMain&o=7&rm=3",
         description: "SUV robusto para qualquer terreno.",
         location: "Brasília",
         model: "SUV",
@@ -117,7 +125,8 @@ export default function CarsPage() {
         id: "car9",
         name: "Peugeot 208",
         price: 60,
-        image: "https://th.bing.com/th/id/R.70661134e9a595b07dfd3557672f9cd4?rik=tKbuH0MBH4OgYA&pid=ImgRaw&r=0",
+        image:
+          "https://th.bing.com/th/id/R.70661134e9a595b07dfd3557672f9cd4?rik=tKbuH0MBH4OgYA&pid=ImgRaw&r=0",
         description: "Hatch moderno, ótimo para cidades europeias.",
         location: "Porto",
         model: "Hatch",
@@ -126,7 +135,8 @@ export default function CarsPage() {
         id: "car10",
         name: "Mercedes-Benz Classe C",
         price: 140,
-        image: "https://th.bing.com/th/id/R.6f72e9bd4aa28de07ba57d1dc15df53b?rik=ywacda5FAfoFVA&pid=ImgRaw&r=0",
+        image:
+          "https://th.bing.com/th/id/R.6f72e9bd4aa28de07ba57d1dc15df53b?rik=ywacda5FAfoFVA&pid=ImgRaw&r=0",
         description: "Sedan premium, conforto e luxo.",
         location: "Lisboa",
         model: "Sedan",
@@ -135,7 +145,8 @@ export default function CarsPage() {
         id: "car11",
         name: "Renault Captur",
         price: 75,
-        image: "https://tse1.mm.bing.net/th/id/OIP.-a-JEY5WJzr0epdCtyaUWwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3",
+        image:
+          "https://tse1.mm.bing.net/th/id/OIP.-a-JEY5WJzr0epdCtyaUWwHaEL?rs=1&pid=ImgDetMain&o=7&rm=3",
         description: "SUV compacto, ótimo para viagens em família.",
         location: "Porto",
         model: "SUV",
@@ -144,7 +155,8 @@ export default function CarsPage() {
         id: "car12",
         name: "Volkswagen Golf",
         price: 65,
-        image: "https://live.staticflickr.com/65535/49813579102_1b783355ca_o.jpg",
+        image:
+          "https://live.staticflickr.com/65535/49813579102_1b783355ca_o.jpg",
         description: "Hatch referência em conforto e tecnologia.",
         location: "Lisboa",
         model: "Hatch",
@@ -162,12 +174,14 @@ export default function CarsPage() {
     let results = cars;
 
     if (pickupLocation.trim()) {
-      results = results.filter(car =>
-        car.location?.toLowerCase().includes(pickupLocation.trim().toLowerCase())
+      results = results.filter((car) =>
+        car.location
+          ?.toLowerCase()
+          .includes(pickupLocation.trim().toLowerCase())
       );
     }
     if (carModel.trim()) {
-      results = results.filter(car =>
+      results = results.filter((car) =>
         car.model?.toLowerCase().includes(carModel.trim().toLowerCase())
       );
     }
@@ -279,7 +293,7 @@ export default function CarsPage() {
                 placeholder="Cidade ou aeroporto"
                 className="px-3 py-2 border border-gray-300 rounded w-full"
                 value={pickupLocation}
-                onChange={e => setPickupLocation(e.target.value)}
+                onChange={(e) => setPickupLocation(e.target.value)}
               />
             </div>
             <div className="flex flex-col">
@@ -290,7 +304,7 @@ export default function CarsPage() {
                 type="date"
                 className="px-3 py-2 border border-gray-300 rounded w-full"
                 value={pickupDate}
-                onChange={e => setPickupDate(e.target.value)}
+                onChange={(e) => setPickupDate(e.target.value)}
               />
             </div>
             <div className="flex flex-col">
@@ -301,7 +315,7 @@ export default function CarsPage() {
                 type="date"
                 className="px-3 py-2 border border-gray-300 rounded w-full"
                 value={returnDate}
-                onChange={e => setReturnDate(e.target.value)}
+                onChange={(e) => setReturnDate(e.target.value)}
               />
             </div>
             <div className="flex flex-col">
@@ -313,7 +327,7 @@ export default function CarsPage() {
                 placeholder="Ex: SUV, Sedan, Hatch"
                 className="px-3 py-2 border border-gray-300 rounded w-full"
                 value={carModel}
-                onChange={e => setCarModel(e.target.value)}
+                onChange={(e) => setCarModel(e.target.value)}
               />
             </div>
             <button
