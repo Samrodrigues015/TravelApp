@@ -1,23 +1,5 @@
 [
   {
-    "id": "1757922169347",
-    "type": "hotel",
-    "hotelId": "hotel-2",
-    "userEmail": "samararodrigues2000@icloud.com",
-    "reservationDate": "2025-09-15T07:42:49.347Z",
-    "hotelDetails": {
-      "id": "hotel-2",
-      "hotel_name": "Hotel boutique charmoso",
-      "description": "Pequeno e aconchegante, no coração da cidade.",
-      "nightly_price": "150",
-      "currency": "USD",
-      "review_rating_float": 4.5,
-      "image_list": [
-        "https://picsum.photos/id/1005/400/300"
-      ]
-    }
-  },
-  {
     "id": "1757922379977",
     "type": "hotel",
     "hotelId": "hotel-1",
@@ -66,20 +48,6 @@
     }
   },
   {
-    "id": "e70c024c-951a-4599-92db-57f3cb9fbfac",
-    "flightId": "7",
-    "userEmail": "samararodrigues2000@icloud.com",
-    "createdAt": "2025-09-16T16:35:18.411Z",
-    "flightDetails": {
-      "origin": "GRU",
-      "destination": "JFK",
-      "departureTime": "2025-09-17T21:40:00",
-      "arrivalTime": "2025-09-18T15:08:00",
-      "airline": "AC",
-      "flightNumber": "91"
-    }
-  },
-  {
     "id": "441ae853-0bf5-4b8f-8b1e-efae43af10ec",
     "flightId": "8",
     "userEmail": "samararodrigues2000@icloud.com",
@@ -103,6 +71,164 @@
       "name": "Fiat 500",
       "price": 45,
       "image": "https://car-images.bauersecure.com/wp-images/12903/fiat500_100.jpg"
+    }
+  },
+  {
+    "id": "b1aa2861-3b4e-4a02-823b-2ff75eb10ae0",
+    "flightId": "2",
+    "userEmail": "samarapaula2112@gmail.com",
+    "createdAt": "2025-09-17T09:37:18.104Z",
+    "flightDetails": {
+      "origin": "GRU",
+      "destination": "OPO",
+      "departureTime": "2025-09-17T21:45:00",
+      "arrivalTime": "2025-09-19T10:40:00",
+      "airline": "GOL Linhas Aéreas",
+      "flightNumber": "5500"
+    }
+  },
+  {
+    "id": "2430955e-ce0e-4059-b177-cc839ba3270c",
+    "flightId": "3",
+    "userEmail": "samarapaula2112@gmail.com",
+    "createdAt": "2025-09-17T09:45:07.298Z",
+    "flightDetails": {
+      "origin": "GRU",
+      "destination": "OPO",
+      "departureTime": "2025-09-17T21:45:00",
+      "arrivalTime": "2025-09-18T22:15:00",
+      "airline": "GOL Linhas Aéreas",
+      "flightNumber": "5500"
+    }
+  },
+  {
+    "id": "422aba7a-9957-4321-9822-2e772a757885",
+    "flightId": "3",
+    "userEmail": "samarapaula2112@gmail.com",
+    "createdAt": "2025-09-17T09:46:58.325Z",
+    "flightDetails": {
+      "origin": "GRU",
+      "destination": "OPO",
+      "departureTime": "2025-09-17T21:45:00",
+      "arrivalTime": "2025-09-18T22:15:00",
+      "airline": "GOL Linhas Aéreas",
+      "flightNumber": "5500"
+    }
+  },
+  {
+    "id": "1758102605902",
+    "type": "hotel",
+    "hotelId": "6",
+    "userEmail": "samarapaula2112@gmail.com",
+    "reservationDate": "2025-09-17T09:50:05.902Z",
+    "hotelDetails": {
+      "id": "6",
+      "hotel_name": "Pestana Vintage Porto",
+      "description": "Hotel 5 estrelas à beira do Rio Douro, no centro histórico do Porto.",
+      "nightly_price": "800",
+      "currency": "EUR",
+      "review_rating_float": 4.7,
+      "image_list": [
+        "https://th.bing.com/th/id/R.e7919b1ec88bd88b5b1561576df5ad7d?rik=rvs%2fy4sr0mPgsA&pid=ImgRaw&r=0"
+      ],
+      "location": "Porto, Portugal"
+    }
+  },
+  {
+    "id": "1758102785268",
+    "type": "car",
+    "carId": "car2",
+    "userEmail": "samarapaula2112@gmail.com",
+    "reservationDate": "2025-09-17T09:53:05.268Z",
+    "carDetails": {
+      "name": "BMW X5",
+      "price": 120,
+      "image": "https://tse2.mm.bing.net/th/id/OIP.CAz3G-PdA_E3IfUs3PxdFgHaEK?rs=1&pid=ImgDetMain&o=7&rm=3"
+    }
+  },
+  {
+    "id": "0dfa6fd6-d069-4a5f-9ca9-ded9cd3c5f93",
+    "flightId": "10",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-24T07:39:07.346Z",
+    "flightDetails": {
+      "origin": "GRU",
+      "destination": "OPO",
+      "departureTime": "2025-09-25T00:45:00",
+      "arrivalTime": "2025-09-25T19:00:00",
+      "airline": "TP",
+      "flightNumber": "84"
+    }
+  },
+  {
+    "id": "1758701029134",
+    "type": "hotel",
+    "hotelId": "6",
+    "userEmail": "test1@gmail.com",
+    "reservationDate": "2025-09-24T08:03:49.134Z",
+    "hotelDetails": {
+      "id": "6",
+      "hotel_name": "Pestana Vintage Porto",
+      "description": "Hotel 5 estrelas à beira do Rio Douro, no centro histórico do Porto.",
+      "nightly_price": "800",
+      "currency": "EUR",
+      "review_rating_float": 4.7,
+      "image_list": [
+        "https://th.bing.com/th/id/R.e7919b1ec88bd88b5b1561576df5ad7d?rik=rvs%2fy4sr0mPgsA&pid=ImgRaw&r=0"
+      ],
+      "location": "Porto, Portugal"
+    }
+  },
+  {
+    "id": "1758701030001",
+    "type": "hotel",
+    "hotelId": "6",
+    "userEmail": "test1@gmail.com",
+    "reservationDate": "2025-09-24T08:03:50.001Z",
+    "hotelDetails": {
+      "id": "6",
+      "hotel_name": "Pestana Vintage Porto",
+      "description": "Hotel 5 estrelas à beira do Rio Douro, no centro histórico do Porto.",
+      "nightly_price": "800",
+      "currency": "EUR",
+      "review_rating_float": 4.7,
+      "image_list": [
+        "https://th.bing.com/th/id/R.e7919b1ec88bd88b5b1561576df5ad7d?rik=rvs%2fy4sr0mPgsA&pid=ImgRaw&r=0"
+      ],
+      "location": "Porto, Portugal"
+    }
+  },
+  {
+    "id": "a0646b88-4b95-42a8-9f36-3e4f7b65a4bc",
+    "flightId": "4",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "createdAt": "2025-09-24T10:42:50.195Z",
+    "flightDetails": {
+      "origin": "GRU",
+      "destination": "OPO",
+      "departureTime": "2025-09-26T15:30:00",
+      "arrivalTime": "2025-09-27T08:00:00",
+      "airline": "TP",
+      "flightNumber": "82"
+    }
+  },
+  {
+    "id": "1758710591970",
+    "type": "hotel",
+    "hotelId": "7",
+    "userEmail": "samararodrigues2000@icloud.com",
+    "reservationDate": "2025-09-24T10:43:11.970Z",
+    "hotelDetails": {
+      "id": "7",
+      "hotel_name": "InterContinental Porto",
+      "description": "Hotel de luxo no coração do Porto, próximo à Avenida dos Aliados.",
+      "nightly_price": "950",
+      "currency": "EUR",
+      "review_rating_float": 4.8,
+      "image_list": [
+        "https://th.bing.com/th/id/R.7156ef3f97c012c42fd7ca8bb08a24b4?rik=XoUQwGwE8e%2fTpw&riu=http%3a%2f%2fmedia.cntraveler.com%2fphotos%2f53d9c94b6dec627b149d3be8%2fmaster%2fpass%2fintercontinental-porto-palacio-das-cardosas-porto-portugal-1-113154.jpg&ehk=fBoq9OM%2ff%2fFtx0NspPrP38uq6DZoosh6ywmhfTJN7Aw%3d&risl=&pid=ImgRaw&r=0"
+      ],
+      "location": "Porto, Portugal"
     }
   }
 ]

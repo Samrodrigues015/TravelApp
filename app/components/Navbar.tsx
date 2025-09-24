@@ -69,7 +69,7 @@ export default function Navbar() {
 
       {/* Menu principal */}
       <ul
-        className={`flex-col md:flex-row md:flex gap-6 items-start absolute md:static top-full left-0 w-full md:w-auto bg-[#81638b] md:bg-transparent transition-all duration-300 overflow-hidden ${
+        className={`flex-col md:flex-row md:flex gap-6 items-start absolute md:static top-full left-0 w-full md:w-auto bg-[#503459] md:bg-transparent transition-all duration-300 overflow-hidden ${
           menuOpen ? "flex py-4" : "h-0 md:h-auto"
         }`}
       >
@@ -83,7 +83,7 @@ export default function Navbar() {
             <li className="px-6 py-2 md:p-0 text-center">
               <button
                 onClick={handleLogout}
-                className="bg-[#81638b] px-3 py-1 rounded hover:bg-[#6a4f72]" // Usei um hover ligeiramente mais escuro para #81638b
+                className="bg-[#81638b] px-3 py-1 rounded hover:bg-[#6a4f72]" 
               >
                 Logout
               </button>

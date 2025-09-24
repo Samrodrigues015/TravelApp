@@ -138,14 +138,14 @@ export default function LoginPage() {
 
           <button
             type="submit"
-            className="w-full bg-blue-600 text-white py-2 rounded hover:bg-blue-700 mb-4"
+            className="w-full bg-[#6a4f72] text-white py-2 rounded hover:bg-[#6a4f72] mb-4"
           >
             Entrar
           </button>
 
           <p className="text-sm text-center text-gray-600">
             Não tem uma conta?{" "}
-            <Link href="/register" className="text-blue-600 hover:underline">
+            <Link href="/register" className="text-[#6a4f72] font-semibold hover:underline">
               Criar conta
             </Link>
           </p>
@@ -157,7 +157,7 @@ export default function LoginPage() {
                 e.preventDefault();
                 setShowForgotPasswordModal(true);
               }}
-              className="text-blue-600 hover:underline"
+              className="text-[#6a4f72] font-semibold hover:underline"
             >
               Esqueceu sua senha?
             </a>
@@ -195,7 +195,7 @@ export default function LoginPage() {
                 </button>
                 <button
                   onClick={handleForgotPassword}
-                  className="px-4 py-2 bg-blue-600 text-white rounded hover:bg-blue-700"
+                  className="px-4 py-2 bg-[#6a4f72] text-white rounded hover:[#6a4f72]"
                 >
                   Enviar
                 </button>

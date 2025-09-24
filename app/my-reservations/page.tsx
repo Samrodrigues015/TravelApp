@@ -63,7 +63,7 @@ export default function MyReservations() {
         body: JSON.stringify({ reservationId: id }),
       });
 
-      const data = await res.json(); 
+      const data = await res.json();
 
       if (!res.ok) throw new Error(data.error || "Erro ao cancelar");
 
@@ -117,19 +117,28 @@ export default function MyReservations() {
                           <strong>Origem:</strong> {res.flightDetails.origin}
                         </p>
                         <p className="text-sm text-gray-600">
-                          <strong>Destino:</strong> {res.flightDetails.destination}
+                          <strong>Destino:</strong>{" "}
+                          {res.flightDetails.destination}
                         </p>
                         <p className="text-sm text-gray-600">
-                          <strong>Companhia:</strong> {res.flightDetails.airline}
+                          <strong>Companhia:</strong>{" "}
+                          {res.flightDetails.airline}
                         </p>
                         <p className="text-sm text-gray-600">
-                          <strong>Número do Voo:</strong> {res.flightDetails.flightNumber}
+                          <strong>Número do Voo:</strong>{" "}
+                          {res.flightDetails.flightNumber}
                         </p>
                         <p className="text-sm text-gray-600">
-                          <strong>Partida:</strong> {new Date(res.flightDetails.departureTime).toLocaleString()}
+                          <strong>Partida:</strong>{" "}
+                          {new Date(
+                            res.flightDetails.departureTime
+                          ).toLocaleString()}
                         </p>
                         <p className="text-sm text-gray-600">
-                          <strong>Chegada:</strong> {new Date(res.flightDetails.arrivalTime).toLocaleString()}
+                          <strong>Chegada:</strong>{" "}
+                          {new Date(
+                            res.flightDetails.arrivalTime
+                          ).toLocaleString()}
                         </p>
                       </>
                     )}
@@ -194,58 +203,58 @@ export default function MyReservations() {
               ))}
           </div>
         </div>
-      </div>
 
-      {/* Seção de Reservas de Carros */}
-      <div className="max-w-3xl mx-auto px-4 mt-8 space-y-4">
-        <h2 className="text-xl font-semibold text-[#503459] text-start">
-          Reservas de Carros
-        </h2>
+        {/* Seção de Reservas de Carros */}
+        <div className="max-w-3xl mx-auto px-4 mt-8 space-y-4">
+          <h2 className="text-xl font-semibold text-[#503459] text-start">
+            Reservas de Carros
+          </h2>
 
-        {reservations.filter((res) => res.type === "car").length === 0 && (
-          <p className="text-gray-500 text-center">Nenhum carro reservado.</p>
-        )}
+          {reservations.filter((res) => res.type === "car").length === 0 && (
+            <p className="text-gray-500 text-center">Nenhum carro reservado.</p>
+          )}
 
-        {reservations
-          .filter((res) => res.type === "car")
-          .map((res) => (
-            <div
-              key={res.id}
-              className="p-4 bg-white rounded-lg shadow flex flex-col md:flex-row justify-between items-center"
-            >
-              <div className="flex flex-col md:flex-row items-center gap-4">
-                {res.carDetails?.image ? (
-                  <img
-                    src={res.carDetails.image}
-                    alt={res.carDetails.name}
-                    className="h-20 w-28 object-cover rounded"
-                  />
-                ) : (
-                  <div className="h-20 w-28 flex items-center justify-center bg-gray-200 rounded text-gray-500">
-                    Sem imagem
-                  </div>
-                )}
-                <div className="text-center md:text-left">
-                  <p className="font-medium">Reserva #{res.id}</p>
-                  <p className="text-sm text-gray-700">
-                    Carro: {res.carDetails?.name}
-                  </p>
-                  <p className="text-sm text-gray-600">
-                    Preço: {res.carDetails?.price} / dia
-                  </p>
-                  <p className="text-xs text-gray-400">
-                    Data: {new Date(res.reservationDate).toLocaleString()}
-                  </p>
-                </div>
-              </div>
-              <button
-                onClick={() => handleCancel(res.id)}
-                className="mt-2 md:mt-0 px-4 py-2 bg-[#6a4f72] text-white rounded hover:bg-[#6a4f72]"
+          {reservations
+            .filter((res) => res.type === "car")
+            .map((res) => (
+              <div
+                key={res.id}
+                className="p-4 bg-white rounded-lg shadow flex flex-col md:flex-row justify-between items-center"
               >
-                Cancelar
-              </button>
-            </div>
-          ))}
+                <div className="flex flex-col md:flex-row items-center gap-4">
+                  {res.carDetails?.image ? (
+                    <img
+                      src={res.carDetails.image}
+                      alt={res.carDetails.name}
+                      className="h-20 w-28 object-cover rounded"
+                    />
+                  ) : (
+                    <div className="h-20 w-28 flex items-center justify-center bg-gray-200 rounded text-gray-500">
+                      Sem imagem
+                    </div>
+                  )}
+                  <div className="text-center md:text-left">
+                    <p className="font-medium">Reserva #{res.id}</p>
+                    <p className="text-sm text-gray-700">
+                      Carro: {res.carDetails?.name}
+                    </p>
+                    <p className="text-sm text-gray-600">
+                      Preço: {res.carDetails?.price} / dia
+                    </p>
+                    <p className="text-xs text-gray-400">
+                      Data: {new Date(res.reservationDate).toLocaleString()}
+                    </p>
+                  </div>
+                </div>
+                <button
+                  onClick={() => handleCancel(res.id)}
+                  className="mt-2 md:mt-0 px-4 py-2 bg-[#6a4f72] text-white rounded hover:bg-[#6a4f72]"
+                >
+                  Cancelar
+                </button>
+              </div>
+            ))}
+        </div>
       </div>
     </>
   );

@@ -64,9 +64,21 @@ async function searchFlights(token: string, params: FlightSearchParams) {
   })
 
   if (!response.ok) {
-    const errorData = await response.json().catch(() => ({}))
-    throw new Error(errorData.error_description || "Erro ao buscar voos")
-  }
+  const text = await response.text()
+  console.error("Erro na resposta da Amadeus:", response.status, text)
+  
+  let errorData = {}
+  try {
+    errorData = JSON.parse(text)
+  } catch {}
+  
+  throw new Error(
+    (errorData as any)?.errors?.[0]?.detail || // Amadeus costuma mandar erros nesse formato
+    (errorData as any)?.error_description ||
+    `Erro ao buscar voos - Status ${response.status}`
+  )
+}
+
 
   return response.json()
 }

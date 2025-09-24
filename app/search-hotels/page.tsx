@@ -10,6 +10,7 @@ interface HotelOffer {
   currency: string;
   review_rating_float: number;
   image_list: string[];
+  location: string; // <-- novo campo
 }
 
 interface SearchFormData {
@@ -17,6 +18,98 @@ interface SearchFormData {
   checkInDate: string;
   checkOutDate: string;
 }
+
+const allHotels: HotelOffer[] = [
+  {
+    id: "1",
+    hotel_name: "Copacabana Palace",
+    description:
+      "Hotel 5 estrelas icônico no Rio de Janeiro, de frente para a praia de Copacabana.",
+    nightly_price: "1200",
+    currency: "BRL",
+    review_rating_float: 4.8,
+    image_list: [
+      "https://th.bing.com/th/id/R.6b4787cc63a8b2ce7511b16e30ad58c1?rik=DbPoWD514dkElA&riu=http%3a%2f%2fwww.themilliardaire.co%2fwp-content%2fuploads%2f2014%2f06%2fcopacabana-palace-18.jpg&ehk=FHmhVaPV70VH%2fj9jG%2b0mRbl3CKH28rmogHIFd9DKF8I%3d&risl=&pid=ImgRaw&r=0",
+    ],
+    location: "Rio de Janeiro, Brasil",
+  },
+  {
+    id: "2",
+    hotel_name: "Hotel Unique",
+    description: "Hotel de luxo com arquitetura moderna em São Paulo.",
+    nightly_price: "950",
+    currency: "BRL",
+    review_rating_float: 4.7,
+    image_list: [
+      "https://th.bing.com/th/id/R.39522c270e89bd8fa36897db1abffb76?rik=eit4I%2bQWHVVFtA&riu=http%3a%2f%2f2.bp.blogspot.com%2f-Xk8b4czq8Vw%2fUmkuf7FRdfI%2fAAAAAAAAdL0%2fGyYeMq5dDDo%2fs1600%2fhotel-unique-sao-paulo_brasil.jpg&ehk=p47D6E27mW1Q4owqz%2bb8aQFZeXr2KUc5oECNGleFct4%3d&risl=&pid=ImgRaw&r=0",
+    ],
+    location: "São Paulo, Brasil",
+  },
+  {
+    id: "3",
+    hotel_name: "Belmond Hotel das Cataratas",
+    description:
+      "Único hotel dentro do Parque Nacional do Iguaçu, com vista para as Cataratas.",
+    nightly_price: "1100",
+    currency: "BRL",
+    review_rating_float: 4.9,
+    image_list: [
+      "https://tse1.mm.bing.net/th/id/OIP.H8kdpI5IMyuqNq_HSRLlDAHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+    ],
+    location: "Foz do Iguaçu, Brasil",
+  },
+  {
+    id: "4",
+    hotel_name: "Hilton Paris Opera",
+    description: "Hotel elegante no coração de Paris.",
+    nightly_price: "900",
+    currency: "EUR",
+    review_rating_float: 4.5,
+    image_list: [
+      "https://dynamic-media-cdn.tripadvisor.com/media/photo-o/0c/36/f4/dd/photo0jpg.jpg?w=900&h=-1&s=1",
+    ],
+    location: "Paris, França",
+  },
+  {
+    id: "5",
+    hotel_name: "Lisbon Marriott Hotel",
+    description: "Hotel moderno com piscina e vista para Lisboa.",
+    nightly_price: "700",
+    currency: "EUR",
+    review_rating_float: 4.3,
+    image_list: [
+      "https://tse1.mm.bing.net/th/id/OIP._TITgUsN8mDozl-ezEhuDwHaE8?rs=1&pid=ImgDetMain&o=7&rm=3",
+    ],
+    location: "Lisboa, Portugal",
+  },
+  {
+    id: "6",
+    hotel_name: "Pestana Vintage Porto",
+    description:
+      "Hotel 5 estrelas à beira do Rio Douro, no centro histórico do Porto.",
+    nightly_price: "800",
+    currency: "EUR",
+    review_rating_float: 4.7,
+    image_list: [
+      "https://th.bing.com/th/id/R.e7919b1ec88bd88b5b1561576df5ad7d?rik=rvs%2fy4sr0mPgsA&pid=ImgRaw&r=0",
+    ],
+    location: "Porto, Portugal",
+  },
+  {
+    id: "7",
+    hotel_name: "InterContinental Porto",
+    description:
+      "Hotel de luxo no coração do Porto, próximo à Avenida dos Aliados.",
+    nightly_price: "950",
+    currency: "EUR",
+    review_rating_float: 4.8,
+    image_list: [
+      "https://th.bing.com/th/id/R.7156ef3f97c012c42fd7ca8bb08a24b4?rik=XoUQwGwE8e%2fTpw&riu=http%3a%2f%2fmedia.cntraveler.com%2fphotos%2f53d9c94b6dec627b149d3be8%2fmaster%2fpass%2fintercontinental-porto-palacio-das-cardosas-porto-portugal-1-113154.jpg&ehk=fBoq9OM%2ff%2fFtx0NspPrP38uq6DZoosh6ywmhfTJN7Aw%3d&risl=&pid=ImgRaw&r=0",
+    ],
+    location: "Porto, Portugal",
+  },
+  // ...adicione mais hotéis reais conforme desejar
+];
 
 export default function SearchHotelsPage() {
   const [formData, setFormData] = useState<SearchFormData>({
@@ -60,21 +153,16 @@ export default function SearchHotelsPage() {
     setShowConfirmation(false);
 
     try {
-      const response = await fetch("/api/search-hotels", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
-      });
-
-      const data = await response.json();
-
-      if (!response.ok) {
-        throw new Error(data.error || "Erro ao buscar hotéis");
-      }
-
-      setHotels(data.data || []);
+      // Simule busca local (ou troque pelo fetch se usar API real)
+      const queryLower = formData.query.toLowerCase();
+      const filtered = allHotels.filter(
+        (hotel) =>
+          hotel.location?.toLowerCase().includes(queryLower) ||
+          hotel.hotel_name.toLowerCase().includes(queryLower)
+      );
+      setHotels(filtered);
     } catch (err) {
-      setError(err instanceof Error ? err.message : "Erro desconhecido");
+      setError("Erro ao buscar hotéis");
     } finally {
       setLoading(false);
     }

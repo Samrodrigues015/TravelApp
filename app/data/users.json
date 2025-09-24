@@ -3,5 +3,33 @@
     "email": "samararodrigues2000@icloud.com",
     "password": "12345678",
     "name": "Samara Rodrigues"
+  },
+  {
+    "email": "test1@gmail.com",
+    "password": "123456"
+  },
+  {
+    "email": "teste@gmail.com",
+    "password": "123456",
+    "name": "Lucas Amaral"
+  },
+  {
+    "email": "renata@gmail.com",
+    "password": "123456"
+  },
+  {
+    "email": "teste2@gmail.com",
+    "password": "12345678",
+    "name": "teste2"
+  },
+  {
+    "email": "samara@gmail.com",
+    "password": "12345678",
+    "name": "Samara Paula"
+  },
+  {
+    "email": "mariana@gmail.com",
+    "password": "12345678",
+    "name": "Mariana Souza Silva"
   }
 ]
